@@ -7,7 +7,7 @@ class Node:
     def __str__(self):
         return str(self.number)
 
-node1 = Node(10,None)
-leftNode1 = Node(5,node1)
-node1.leftChild = leftNode1
-print(node1)
+# node1 = Node(10,None)
+# leftNode1 = Node(5,node1)
+# node1.leftChild = leftNode1
+# print(node1)
