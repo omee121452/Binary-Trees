@@ -23,7 +23,7 @@ class BinaryTree:
                 else:
                     CurrentParent.leftChild = Node(Newnumber, CurrentParent)
                     NodeCreated = True
-            if Newnumber > CurrentParent.number:
+            elif Newnumber > CurrentParent.number:
                 if CurrentParent.rightChild != None:
                     CurrentParent = CurrentParent.rightChild
                 else:
