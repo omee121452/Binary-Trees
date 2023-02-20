@@ -31,7 +31,10 @@ class BinaryTree:
                     NodeCreated = True
 
     def __str__(self):
-        pass
+        return self.inorderTraversal(self.root)
+    def inorderTraversal(self,CurrentNode):
+        self.inorderTraversal(CurrentNode.leftchild)
+
         # inorder traversal
 
 
