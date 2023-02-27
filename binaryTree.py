@@ -4,7 +4,8 @@ from node import Node
 class BinaryTree:
     def __init__(self):
         self.root = None
-
+    #This function takes an inputed number called Newnumber and goes down the binaryTree by using rules where if the Newnumber is > or < to the
+    # CurrentParent being looked at. It keeps moving the node down left or right untill it reaches a spot where there is no already existing child.
     def insert(self, Newnumber):
         NodeCreated = False
         if self.root == None:
@@ -31,20 +32,34 @@ class BinaryTree:
                     NodeCreated = True
 
     def __str__(self):
-        return self.inorderTraversal(self.root)
+        self.inorderTraversal(self.root)
+        return ''
+#Have a fucntion Called inorderTraversal that uses recursion to run through a BinaryTree and make a list of number orderd from smallest to biggest.
     def inorderTraversal(self,CurrentNode):
-        self.inorderTraversal(CurrentNode.leftchild)
+        if CurrentNode.leftChild != None:
+            #check if the current node we are looking at has a left child
+            self.inorderTraversal(CurrentNode.leftChild)
+            #if it does then it goes throught the function again and now uses the CurrentNodes left child as the input.
+        print(CurrentNode, end=" ")
+        #this is the basecase
+        if CurrentNode.rightChild != None:
+            # check if the current node we are looking at has a right child
+            self.inorderTraversal(CurrentNode.rightChild)
+            # if it does then it goes throught the function again and now uses the CurrentNodes right child as the input.
 
         # inorder traversal
 
 
 bt1 = BinaryTree()
-print(bt1.root)
+#print(bt1.root)
 bt1.insert(10)
-print(bt1.root)
+#print(bt1.root)
 bt1.insert(8)
+bt1.insert(9)
 bt1.insert(2)
 bt1.insert(80)
 bt1.insert(200)
-print(bt1.root.rightChild.rightChild)
+bt1.insert(70)
+#print(bt1.root.rightChild.rightChild)
+print(bt1)
 #print(bt1.root.leftChild.leftChild)
